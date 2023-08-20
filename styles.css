@@ -230,68 +230,19 @@ hr{
     border: none;
     border-radius: 4px 4px 0 0;
 }
-
+.upcoming-weather{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 4px;
+}
+.upcoming-weather p{
+    padding: 0;
+    font-size: 10px;
+}
 .upcoming-card{
     padding-bottom: 0px;
-    padding-right: 0px;
-    padding-left: 0px;
 }
-.upcoming-title{
-    padding-left: 16px;
-}
-.upcoming-list{
-    display: flex;
-    flex-direction: row;
-    height: 150px;
-    padding-top: 8px;
-    justify-content: space-between;
-}
-.upcoming-list-card{
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 150px;
-    
-    
-}
-.upcoming-hour{
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 19px;
-    color: #878D91;
-
-}
-.upcoming-temp{
-    font-weight: 900;
-    font-size: 14px;
-    line-height: 19px;
-    color: #101B23;
-}
-.upcoming-list-card-rain{
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
-}
-.upcoming-list-card-rain p{
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 19px;
-    color: #B5B8BC;
-}
-.upcoming-list-card-rain img{
-    width: 100%;
-}
-.grey-card{
-    background: #EFF1F4;
-    border-radius: 8px 8px 0 0;
-}
-
-
 
 @media only screen and (min-width: 600px) {
     body{
@@ -299,10 +250,9 @@ hr{
         justify-content: center;
         align-items: center;
     }
-    .upcoming-card{
+    .card{
         width: 400px;
     }
-    
 }
 @media only screen and (max-width: 350px) {
     .day-info{
@@ -390,13 +340,197 @@ hr{
     hr{
         background-color: #333C44;
     }
-
-    .upcoming-temp{
-        
-        color: #DADCDF;
+}
+@media (prefers-color-scheme: dark) and (display-mode: standalone){
+    body{
+        background-color: black;
+        color: var(--mygrey);
+        border-color: #333C44;
     }
-    .grey-card{
-        background: #091117;
-        
+    .card{
+        box-shadow: none;
+        background: var(--myblack);
+    }
+    h1{
+        color: var(--mygrey);
+    }
+    h2{
+        color: var(--mygrey);
+    }
+    h3{
+        color: var(--mygrey);
+    }
+    p{
+        color: var(--mygrey);
+    }
+    span{
+        color: var(--mygrey);
+    }
+    a{
+        color: var(--mygrey);
+    }
+    .day-info-detail{
+        border: 1px solid #333C44;
+    }
+    .day-info-detail-circle{
+        border: 1px solid #333C44;
+        background: none;
+    }
+    #temp-line{
+        stroke: #333C44;
+    }
+    #tempdot circle{
+        fill: black;
+        stroke: #333C44;
+    }
+    #tempnumber text{
+        fill: var(--bgcolor);
+    }
+    .dark{
+        fill: var(--mygrey);
+    }
+    hr{
+        background-color: #333C44;
+    }
+}
+@media only screen and (min-width: 600px) and (display-mode: standalone){
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .card{
+        width: 400px;
+    }
+}
+@media only screen and (max-width: 350px) and (display-mode: standalone){
+    .day-info{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .day-info-weather{
+        width: auto;
+        padding-bottom: 16px;
+    }
+    .day-info-detail{
+        margin-bottom: 16px;
+    }
+    .card{
+        padding-bottom: 0px;
+    }
+    #tomorrow-card{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .afternoon{
+        width: 100%;
+        border-right: 0px solid var(--mygrey);
+        border-left: 0px solid var(--mygrey);
+        border-top: 1px solid var(--mygrey);
+        border-bottom: 1px solid var(--mygrey);
+        padding-left: 0px;
+    }
+    .night{
+        margin: 0px;
+    }
+    .transparent{
+        display: none;
+    }
+}
+
+@media (prefers-color-scheme: dark) and (display-mode: fullscreen){
+    body{
+        background-color: black;
+        color: var(--mygrey);
+        border-color: #333C44;
+    }
+    .card{
+        box-shadow: none;
+        background: var(--myblack);
+    }
+    h1{
+        color: var(--mygrey);
+    }
+    h2{
+        color: var(--mygrey);
+    }
+    h3{
+        color: var(--mygrey);
+    }
+    p{
+        color: var(--mygrey);
+    }
+    span{
+        color: var(--mygrey);
+    }
+    a{
+        color: var(--mygrey);
+    }
+    .day-info-detail{
+        border: 1px solid #333C44;
+    }
+    .day-info-detail-circle{
+        border: 1px solid #333C44;
+        background: none;
+    }
+    #temp-line{
+        stroke: #333C44;
+    }
+    #tempdot circle{
+        fill: black;
+        stroke: #333C44;
+    }
+    #tempnumber text{
+        fill: var(--bgcolor);
+    }
+    .dark{
+        fill: var(--mygrey);
+    }
+    hr{
+        background-color: #333C44;
+    }
+}
+@media only screen and (min-width: 600px) and (display-mode: fullscreen){
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .card{
+        width: 400px;
+    }
+}
+@media only screen and (max-width: 350px) and (display-mode: fullscreen){
+    .day-info{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .day-info-weather{
+        width: auto;
+        padding-bottom: 16px;
+    }
+    .day-info-detail{
+        margin-bottom: 16px;
+    }
+    .card{
+        padding-bottom: 0px;
+    }
+    #tomorrow-card{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .afternoon{
+        width: 100%;
+        border-right: 0px solid var(--mygrey);
+        border-left: 0px solid var(--mygrey);
+        border-top: 1px solid var(--mygrey);
+        border-bottom: 1px solid var(--mygrey);
+        padding-left: 0px;
+    }
+    .night{
+        margin: 0px;
+    }
+    .transparent{
+        display: none;
     }
 }
