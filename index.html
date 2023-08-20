@@ -54,55 +54,59 @@
                 </section>
             </section>
             <section class="card upcoming-card" id="upcoming-card">
-                <h2>next 12 hours</h2>
-                <section class="upcoming-weather">
-                    <p font-size="10" id="t1">T1</p>
-                    <p font-size="10" id="t2" >T2</p>
-                    <p font-size="10" id="t3" text-align="right" >T3</p>
-                </section>
-                <section class="upcoming-weather">
-                    <img src="./icons/loading.svg" alt="weather" id="upcoming-ico-1" width="6.5%">
-                    <img src="./icons/loading.svg" alt="weather" id="upcoming-ico-2" width="6.5%">
-                    <img src="./icons/loading.svg" alt="weather" id="upcoming-ico-3" width="6.5%">
-                </section>
-                <section class="temp-chart">
-                    <svg  viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g id="temp chart">
-                        <polyline id="temp-line"
-                        fill="none"
-                        stroke="#DADCDF"
-                        stroke-width="3"
-                        points="
-                          10,50 
-                          200,50
-                          390,20
-                        "
-                      />
-                        <g id="tempdot">
-                        <circle id="temp3" cx="388" cy="20" r="3.5" fill="white" stroke="#DADCDF" stroke-width="3"/>
-                        <circle id="temp2" cx="200" cy="50" r="3.5" fill="white" stroke="#DADCDF" stroke-width="3"/>
-                        <circle id="temp1" cx="8" cy="50" r="3.5" fill="white" stroke="#DADCDF" stroke-width="3"/>
-                        </g>
-                        <g id="tempnumber">
-                        <text fill="#101B23" xml:space="preserve" style="white-space: pre" font-size="10" font-weight="300" letter-spacing="0em"><tspan id="midtemp" x="195" y="40">0°</tspan></text>
-                        <text fill="#101B23" xml:space="preserve" style="white-space: pre" font-size="10" font-weight="300" letter-spacing="0em"><tspan id="lasttemp" x="381" y="10">0°</tspan></text>
-                        <text fill="#101B23" xml:space="preserve" style="white-space: pre" font-size="10" font-weight="300" letter-spacing="0em"><tspan id="firsttemp" x="1" y="40">0°</tspan></text>
-                        </g>
-                        </g>
-                        </svg>
-                </section>
-                <section class="rain-chart">
-                    <hr id="rain1">
-                    <hr id="rain2">
-                    <hr id="rain3">
-                    <hr id="rain4">
-                    <hr id="rain5">
-                    <hr id="rain6">
-                    <hr id="rain7">
-                    <hr id="rain8">
-                    <hr id="rain9">
-                    <hr id="rain10">
-                    <hr id="rain11">
+                <h2 class="upcoming-title">next 5 hours</h2>
+                <section class="upcoming-list">
+
+                    <section class="upcoming-list-card">
+                        <p class="upcoming-hour" id="H1">00:00</p>
+                        <img src="./icons/loading.svg" id="H1Icon">
+                        <p class="upcoming-temp" id="H1Temp">0</p>
+                        <section class="upcoming-list-card-rain">
+                            <img src="./icons/MiniRain.svg" alt="rain icon" id="H1RainIcon">
+                            <p id="H1Rain">%</p>
+                        </section>
+                    </section>
+
+                    <section class="upcoming-list-card grey-card">
+                        <p class="upcoming-hour" id="H2">00:00</p>
+                        <img src="./icons/loading.svg" id="H2Icon">
+                        <p class="upcoming-temp" id="H2Temp">0</p>
+                        <section class="upcoming-list-card-rain">
+                            <img src="./icons/MiniRain.svg" alt="rain icon" id="H2RainIcon">
+                            <p id="H2Rain">%</p>
+                        </section>
+                    </section>
+
+                    <section class="upcoming-list-card">
+                        <p class="upcoming-hour" id="H3">00:00</p>
+                        <img src="./icons/loading.svg" id="H3Icon">
+                        <p class="upcoming-temp" id="H3Temp">0</p>
+                        <section class="upcoming-list-card-rain">
+                            <img src="./icons/MiniRain.svg" alt="rain icon" id="H3RainIcon">
+                            <p id="H3Rain">%</p>
+                        </section>
+                    </section>
+
+                    <section class="upcoming-list-card grey-card">
+                        <p class="upcoming-hour" id="H4">00:00</p>
+                        <img src="./icons/loading.svg" id="H4Icon">
+                        <p class="upcoming-temp" id="H4Temp">0</p>
+                        <section class="upcoming-list-card-rain">
+                            <img src="./icons/MiniRain.svg" alt="rain icon" id="H4RainIcon">
+                            <p id="H4Rain">%</p>
+                        </section>
+                    </section>
+
+                    <section class="upcoming-list-card">
+                        <p class="upcoming-hour" id="H5">00:00</p>
+                        <img src="./icons/loading.svg" id="H5Icon">
+                        <p class="upcoming-temp" id="H5Temp">0</p>
+                        <section class="upcoming-list-card-rain">
+                            <img src="./icons/MiniRain.svg" alt="rain icon" id="H5RainIcon">
+                            <p id="H5Rain">%</p>
+                        </section>
+                    </section>
+
                 </section>
             </section>
             <section class="card mini-card" id="night-card">

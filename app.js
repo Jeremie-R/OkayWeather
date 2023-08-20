@@ -21,10 +21,12 @@ window.addEventListener('load', ()=>{
               function processRequest(e) { 
                 if (xhr.readyState == 4 && xhr.status == 200) { 
                  var response = JSON.parse(xhr.responseText); 
+                 
                  var city = response.address.city; 
                  console.log(city); 
+                 
                  let location = city;
-                 if (city == 'undefined') {document.getElementById('city').textContent = 'Today'
+                 if (city == 'Undefinded' ) {document.getElementById('city').textContent = 'Today'
                      
                  } else {
                     document.getElementById('city').textContent = city+', Today'
@@ -68,78 +70,54 @@ window.addEventListener('load', ()=>{
                         document.getElementById('now-wind-ico').style.opacity = nowWind*2+'%';
                     }else{ document.getElementById('now-wind-ico').style.opacity = "1"; 
                     }
+
+                    
                     //upcomin time
                     let time= new Date().getHours();
                     console.log(time);
 
                     let t1 = time+1;
-                    let t2 = time+6;
-                    let t3 = time+12;
+                    let t2 = time+2;
+                    let t3 = time+3;
+                    let t4 = time+4;
+                    let t5 = time+5;
 
                     if (t1>24) { t1 = t1-24; }
                     if (t2>24) { t2 = t2-24; }
                     if (t3>24) { t3 = t3-24; }
+                    if (t4>24) { t4 = t4-24; }
+                    if (t5>24) { t5 = t5-24; }
 
-                    document.getElementById('t1').textContent = t1+':00';
-                    document.getElementById('t2').textContent = t2+':00';
-                    document.getElementById('t3').textContent = t3+':00';
+                    let i=1
 
-                    //upcoming weather iconm
-                    document.getElementById('upcoming-ico-1').src = './icons/weather/' + data.hourly[1].weather[0].icon + '.svg';
-                    document.getElementById('upcoming-ico-2').src = './icons/weather/' + data.hourly[7].weather[0].icon + '.svg';
-                    document.getElementById('upcoming-ico-3').src = './icons/weather/' + data.hourly[12].weather[0].icon + '.svg';
+                    for (let i = 1; i < 6; i++) {
+                        
+                        //time
+                        var hour = time+i
+                        if (hour>24) { hour = hour-24; }
+                        document.getElementById('H'+i).textContent = hour+':00'
 
-                    //upcoming svg
-                    let temp1 = Math.round(data.hourly[1].temp);
-                    let temp2 = Math.round(data.hourly[7].temp);
-                    let temp3 = Math.round(data.hourly[12].temp);
-                    
-                    document.getElementById('firsttemp').textContent = temp1+'°';
-                    document.getElementById('midtemp').textContent = temp2+'°';
-                    document.getElementById('lasttemp').textContent = temp3+'°';
+                        //icon
+                        document.getElementById('H'+i+'Icon').src = './icons/weather/' + data.hourly[i].weather[0].icon + '.svg';
 
-                    let move1 = (temp1-temp2)*5;
-                    
-                    let move2 = (temp1-temp3)*5;
-                    //fix move issue
-                    if (move1>45) {move1=45};
-                    if (move1<-40) {move1=-40};
-                    if (move2>45) {move2=45};
-                    if (move2<-40) {move2=-40};
+                        //temp
+                        document.getElementById('H'+i+'Temp').textContent = Math.round(data.hourly[i].temp) +'°';
+                        
+                        //rain
+                        document.getElementById('H'+i+'Rain').textContent = Math.round(100* data.hourly[i].pop) +'%';
+                        
+                        //speical blue
+                        if (data.hourly[i].pop > 0.3) {
 
-                    document.getElementById('midtemp').setAttribute("y", 40 + move1 );
-                    document.getElementById('lasttemp').setAttribute("y", 40 + move2 );
+                            document.getElementById('H'+i+'Rain').style.color = '#41A0FF';
+                            //document.getElementById('H'+i+'Rain').style.fontWeight = 'bold';
+                            document.getElementById('H'+i+'RainIcon').src = './icons/MiniRainBlue.svg';
 
-                    document.getElementById('temp2').setAttribute("cy", 50 + move1 );
-                    document.getElementById('temp3').setAttribute("cy", 50 + move2 );
-
-                    document.getElementById('temp-line').setAttribute("points", "10,50 200," +  (50 + move1) +" 390,"+ (50 + move2));
-
-                    //upcoming rain
-                    t=1;
-                    
-                    for(let t=1; t<12; t++){
-                        if (data.hourly[t].pop < 0.2) {
-                            document.getElementById('rain'+t).style.height= '0%';
-                        }else{
-                            if (data.hourly[t].pop > 0.5) {
-                                
-                                try{
-                                if (data.hourly[t].rain["1h"] <2 ) {
-                                    document.getElementById('rain'+t).style.backgroundColor = '#5AACFF'
-                                    document.getElementById('rain'+t).style.height= (data.hourly[t].rain["1h"]/2)*100 +'%';
-                                } else {
-                                    document.getElementById('rain'+t).style.backgroundColor = '#5AACFF'
-                                    document.getElementById('rain'+t).style.height= '100%';
-                                }}catch(err) {document.getElementById('rain'+t).style.height= data.hourly[t].pop*75 +'%';}
-                                
-                            }else{document.getElementById('rain'+t).style.height= data.hourly[t].pop*50 +'%';
-                            
-                                }
-                            
-                            }
-                                                
+                        }
                     }
+                    
+
+                    
 
                     //tomorrow
                     var days = [
