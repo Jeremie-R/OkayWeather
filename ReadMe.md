@@ -1,6 +1,6 @@
 # Okay Weather
 
-![okayweatherdemo](https://jeremie-r.github.io/OkayWeather/okayweatherdemo.png)
+[![okayweatherdemo](https://jeremie-r.github.io/OkayWeather/okayweatherdemo.png)](https://jeremie-r.github.io/OkayWeather/)
 
 
 A simple web app I developed in 2019. \
