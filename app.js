@@ -49,7 +49,7 @@ window.addEventListener('load', ()=>{
             console.log('lat:'+(Math.round(lat *100)/100)+' long:'+(Math.round(long *100)/100))
             
             //weather call
-            const api ='https://api.openweathermap.org/data/2.5/onecall?lat='+(Math.round(lat *100)/100)+'&lon='+(Math.round(long *100)/100)+'&appid='+apiKey+'&units=metric';
+            const api ='https://api.openweathermap.org/data/3.0/onecall?lat='+(Math.round(lat *100)/100)+'&lon='+(Math.round(long *100)/100)+'&appid='+apiKey+'&units=metric';
             fetch(api)
                 .then(response=> {
                     return response.json();
