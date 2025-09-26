@@ -1,4 +1,4 @@
-# Okay Weather
+# Okay Weather v1
 
 [![okayweatherdemo](https://jeremie-r.github.io/OkayWeather/okayweatherdemo.png)](https://jeremie-r.github.io/OkayWeather/)
 
