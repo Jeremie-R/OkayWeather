@@ -10,4 +10,4 @@ but I least it sort of works.
 [older version for github](https://jeremie-r.github.io/OkayWeather/)
 
 
-[current web app](https://roberrini.com/apps/okayweather/index.html)
+[current web app](https://github.com/Jeremie-R/OkayWeatherV2))
